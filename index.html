@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide Mentor VTC Toulouse — De 0 à 5 000 € net</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --void: #07021a;
+  --deep: #0f0630;
+  --mid: #1a0d45;
+  --card: #1e1050;
+  --card-lite: #f3eeff;
+  --card-white: #ffffff;
+  --violet: #7c3aed;
+  --violet-light: #a78bfa;
+  --violet-pale: #ede9fe;
+  --fuchsia: #c026d3;
+  --gold: #f59e0b;
+  --gold-pale: #fef3c7;
+  --cyan: #06b6d4;
+  --vert: #10b981;
+  --rouge: #ef4444;
+  --blanc: #f8f5ff;
+  --gris-mid: #6b7280;
+  --gris-light: #9ca3af;
+  --border: rgba(124,58,237,0.25);
+  --border-lite: #e5e0f5;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--card-lite);color:var(--void);font-family:'Space Grotesk',sans-serif;font-size:13.5px;line-height:1.65;}
+
+/* NAV */
+.sticky-nav{
+  position:sticky;top:0;z-index:100;
+  background:var(--void);
+  border-bottom:2px solid var(--violet);
+  display:flex;align-items:center;gap:0;overflow-x:auto;
+}
+.sticky-nav a{
+  color:#9ca3af;text-decoration:none;
+  font-family:'Space Mono',monospace;font-size:9px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:15px 16px;white-space:nowrap;transition:all .2s;
+}
+.sticky-nav a:hover{color:var(--violet-light);background:rgba(124,58,237,.15);}
+.sticky-nav .logo{
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;
+  padding:10px 24px;border-right:1px solid rgba(124,58,237,.3);flex-shrink:0;
+  letter-spacing:1px;
+}
+
+/* HERO */
+.hero{
+  background:var(--void);color:var(--blanc);
+  padding:88px 64px 72px;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(124,58,237,.18) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(192,38,211,.10) 0%, transparent 60%);
+  pointer-events:none;
+}
+.hero::after{
+  content:'VTC';
+  position:absolute;right:-40px;bottom:-80px;
+  font-family:'Cormorant Garamond',serif;font-size:260px;font-weight:700;
+  color:rgba(124,58,237,.05);pointer-events:none;line-height:1;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,var(--violet),var(--fuchsia));
+  color:#fff;font-family:'Space Mono',monospace;
+  font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  padding:8px 18px;margin-bottom:32px;border-radius:2px;
+}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(42px,7vw,84px);font-weight:700;line-height:1.0;
+  margin-bottom:20px;max-width:820px;
+}
+.hero h1 em{
+  background:linear-gradient(135deg,var(--gold),#f97316);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;font-style:normal;
+}
+.hero-desc{font-size:15px;color:#9ca3af;max-width:540px;margin-bottom:48px;line-height:1.75;}
+.hero-kpis{display:flex;gap:36px;flex-wrap:wrap;}
+.kpi{border-left:3px solid var(--violet);padding:8px 0 8px 20px;}
+.kpi-val{
+  font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;
+  color:var(--gold);line-height:1;
+}
+.kpi-lab{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin-top:4px;}
+
+/* LAYOUT */
+.wrap{max-width:1160px;margin:0 auto;padding:0 52px;}
+@media(max-width:768px){.wrap{padding:0 20px;}.hero{padding:52px 20px 52px;}}
+
+/* SECTIONS — alternance fond */
+.section{padding:68px 0;border-bottom:1px solid var(--border-lite);}
+.section:nth-child(even){background:var(--blanc);}
+.section:last-child{border-bottom:none;}
+.sec-tag{
+  font-family:'Space Mono',monospace;font-size:9px;font-weight:700;
+  letter-spacing:5px;text-transform:uppercase;color:var(--violet);margin-bottom:6px;
+}
+.sec-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(30px,4.5vw,52px);font-weight:700;line-height:1.0;
+  margin-bottom:10px;color:var(--void);
+}
+.sec-sub{color:var(--gris-mid);font-size:14px;margin-bottom:42px;max-width:580px;line-height:1.7;}
+
+/* GRID */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+@media(max-width:900px){.g2,.g3,.g4{grid-template-columns:1fr;}}
+
+/* CARDS */
+.card{padding:28px 30px;border-radius:4px;}
+.card-dark{background:var(--mid);color:var(--blanc);}
+.card-deep{background:var(--void);color:var(--blanc);}
+.card-light{background:var(--card-white);border:1px solid var(--border-lite);}
+.card-accent{background:var(--violet-pale);border:1px solid rgba(124,58,237,.15);}
+
+.card h3{
+  font-family:'Space Mono',monospace;font-size:10px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:18px;
+}
+.card-dark h3,.card-deep h3{color:var(--violet-light);}
+.card-light h3,.card-accent h3{color:var(--violet);}
+
+.border-violet{border-top:3px solid var(--violet);}
+.border-gold{border-top:3px solid var(--gold);}
+.border-vert{border-top:3px solid var(--vert);}
+.border-rouge{border-top:3px solid var(--rouge);}
+.border-cyan{border-top:3px solid var(--cyan);}
+.border-fuchsia{border-top:3px solid var(--fuchsia);}
+.big{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;line-height:1;margin-bottom:8px;}
+
+/* BADGES */
+.badge{
+  display:inline-block;padding:3px 10px;border-radius:2px;
+  font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+}
+.b-violet{background:var(--violet);color:#fff;}
+.b-gold{background:var(--gold);color:var(--void);}
+.b-vert{background:var(--vert);color:#fff;}
+.b-rouge{background:var(--rouge);color:#fff;}
+.b-cyan{background:var(--cyan);color:var(--void);}
+.b-fuchsia{background:var(--fuchsia);color:#fff;}
+.b-grey{background:#e5e7eb;color:#374151;}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse;}
+th{
+  background:var(--void);color:var(--violet-light);
+  font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  padding:13px 15px;text-align:left;
+}
+td{padding:12px 15px;border-bottom:1px solid var(--border-lite);font-size:12.5px;vertical-align:top;}
+tr:hover td{background:var(--violet-pale);}
+.table-wrap{overflow-x:auto;}
+
+/* ALERTS */
+.alert{padding:18px 24px;margin:20px 0;font-size:13px;line-height:1.65;border-radius:3px;}
+.a-default{border-left:4px solid var(--violet);background:var(--violet-pale);color:#4c1d95;}
+.a-vert{border-left:4px solid var(--vert);background:#ecfdf5;color:#065f46;}
+.a-rouge{border-left:4px solid var(--rouge);background:#fef2f2;color:#7f1d1d;}
+.a-gold{border-left:4px solid var(--gold);background:var(--gold-pale);color:#78350f;}
+.a-cyan{border-left:4px solid var(--cyan);background:#ecfeff;color:#164e63;}
+.alert strong{font-weight:700;}
+
+/* CHECKLIST */
+ul.cl{list-style:none;padding:0;}
+ul.cl li{
+  padding:9px 0;border-bottom:1px dashed var(--border-lite);
+  display:flex;align-items:flex-start;gap:12px;
+  font-size:13px;color:var(--gris-mid);line-height:1.55;
+}
+ul.cl li:last-child{border-bottom:none;}
+ul.cl li::before{content:"→";color:var(--violet);font-weight:700;flex-shrink:0;margin-top:1px;}
+ul.cl.dark li{color:#c4b5fd;border-color:rgba(124,58,237,.2);}
+ul.cl.dark li::before{color:var(--gold);}
+ul.cl li strong{color:var(--void);}
+ul.cl.dark li strong{color:var(--blanc);}
+
+/* LINK PILL */
+.link-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:7px 16px;border-radius:3px;
+  background:var(--void);color:var(--violet-light);text-decoration:none;
+  font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1px;
+  border:1px solid rgba(124,58,237,.4);margin:4px 4px 4px 0;transition:all .2s;
+}
+.link-pill:hover{background:var(--violet);color:#fff;border-color:var(--violet);}
+.link-pill::after{content:"↗";margin-left:2px;}
+
+/* TIMELINE */
+.tl{position:relative;padding-left:48px;}
+.tl::before{
+  content:'';position:absolute;left:15px;top:12px;bottom:12px;
+  width:2px;
+  background:linear-gradient(to bottom,var(--violet),var(--fuchsia),rgba(124,58,237,.1));
+}
+.tl-item{position:relative;margin-bottom:44px;}
+.tl-dot{
+  position:absolute;left:-39px;top:6px;width:20px;height:20px;border-radius:50%;
+  background:var(--violet);border:3px solid var(--card-lite);
+  box-shadow:0 0 0 2px var(--violet),0 0 20px rgba(124,58,237,.4);
+}
+.tl-dot.g{background:var(--vert);box-shadow:0 0 0 2px var(--vert),0 0 16px rgba(16,185,129,.4);}
+.tl-dot.b{background:var(--cyan);box-shadow:0 0 0 2px var(--cyan),0 0 16px rgba(6,182,212,.4);}
+.tl-dot.gold{background:var(--gold);box-shadow:0 0 0 2px var(--gold),0 0 16px rgba(245,158,11,.4);}
+.tl-month{
+  font-family:'Space Mono',monospace;font-size:9px;font-weight:700;
+  letter-spacing:3px;text-transform:uppercase;color:var(--violet);margin-bottom:5px;
+}
+.tl-title{
+  font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;
+  margin-bottom:8px;line-height:1.1;color:var(--void);
+}
+.tl-desc{color:var(--gris-mid);margin-bottom:18px;font-size:13px;max-width:720px;line-height:1.65;}
+.tl-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.chip{
+  background:var(--mid);color:var(--violet-light);
+  padding:8px 16px;border-radius:3px;
+  font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1px;
+}
+.chip.gold{background:var(--void);color:var(--gold);}
+.chip.success{background:#065f46;color:#6ee7b7;}
+
+/* SCHEDULE GRID */
+.schedule-grid{display:grid;grid-template-columns:82px repeat(7,1fr);gap:2px;}
+.sched-head{
+  background:var(--void);color:var(--violet-light);
+  font-family:'Space Mono',monospace;font-weight:700;font-size:9px;
+  letter-spacing:1px;text-transform:uppercase;padding:11px 6px;text-align:center;
+}
+.sched-time{
+  background:#f1edf9;color:#7c3aed;padding:8px 8px;font-size:10px;
+  font-family:'Space Mono',monospace;font-weight:700;
+  display:flex;align-items:center;justify-content:flex-end;
+}
+.sched-cell{
+  padding:6px 3px;text-align:center;
+  font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.4px;
+  min-height:36px;display:flex;align-items:center;justify-content:center;border-radius:1px;
+}
+.s-peak{background:#1e0b4a;color:#a78bfa;}
+.s-work{background:#0f172a;color:#7dd3fc;}
+.s-mid{background:#2d1b00;color:#fcd34d;}
+.s-rest{background:#f3eeff;color:#c4b5fd;}
+
+/* CALENDAR */
+.cal-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:6px;}
+.cal-month{text-align:center;}
+.cal-month-name{
+  font-family:'Space Mono',monospace;font-size:9px;font-weight:700;
+  letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;color:var(--void);
+}
+.cal-bar{
+  border-radius:3px;margin-bottom:6px;position:relative;
+  display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;
+}
+.cal-score{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:white;}
+.cal-label{font-size:9px;font-family:'Space Mono',monospace;text-align:center;color:var(--gris-mid);line-height:1.4;}
+.cal-peak{background:linear-gradient(160deg,#059669,#10b981);}
+.cal-good{background:linear-gradient(160deg,#2563eb,#3b82f6);}
+.cal-mid{background:linear-gradient(160deg,#d97706,#f59e0b);}
+.cal-low{background:linear-gradient(160deg,#dc2626,#ef4444);}
+
+/* TRAP BOX */
+.trap{
+  background:var(--card-white);border:1px solid #fecaca;
+  border-left:4px solid var(--rouge);padding:20px 24px;margin-bottom:14px;border-radius:3px;
+}
+.trap-title{
+  font-family:'Space Mono',monospace;font-size:10px;font-weight:700;
+  color:var(--rouge);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;
+}
+.trap p{font-size:13px;color:#374151;line-height:1.65;}
+.trap .fix{margin-top:10px;font-size:13px;color:#065f46;border-left:3px solid var(--vert);padding-left:12px;background:#f0fdf4;padding:8px 12px;border-radius:0 2px 2px 0;}
+
+/* SHARING BOX */
+.share-box{
+  background:var(--void);color:var(--blanc);padding:32px 36px;border-radius:6px;
+  border:1px solid rgba(124,58,237,.4);position:relative;overflow:hidden;
+}
+.share-box::before{
+  content:'';position:absolute;top:-40px;right:-40px;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(124,58,237,.2),transparent 70%);
+  pointer-events:none;
+}
+
+/* FOOTER */
+footer{background:var(--void);color:#4b5563;padding:44px 64px;}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);margin-bottom:10px;}
+.footer-disc{font-size:11px;line-height:1.9;max-width:520px;color:#374151;}
+.note{font-size:11px;color:var(--gris-light);margin-top:8px;font-style:italic;font-family:'Space Mono',monospace;}
+.divider{border:none;border-top:1px solid var(--border-lite);margin:32px 0;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="sticky-nav">
+  <div class="logo">VTC Mentor ✦</div>
+  <a href="#juridique">01 · Juridique</a>
+  <a href="#vehicule">02 · Véhicule</a>
+  <a href="#fiscal">03 · Fiscal</a>
+  <a href="#plan">04 · Plan M×M</a>
+  <a href="#planning">05 · Planning</a>
+  <a href="#calendrier">06 · Calendrier</a>
+  <a href="#pieges">07 · Pièges</a>
+  <a href="#ressources">08 · Ressources</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">✦ Guide Mentor Complet — Toulouse 2025</div>
+  <h1>De zéro<br>à <em>5 000 €</em> net<br>en 7 mois</h1>
+  <p class="hero-desc">Le guide de référence pour lancer, structurer et faire décoller une activité chauffeur VTC à Toulouse. Zéro angle mort. Chaque étape, chaque décision, chaque astuce pour atteindre l'indépendance financière.</p>
+  <div class="hero-kpis">
+    <div class="kpi"><div class="kpi-val">M7</div><div class="kpi-lab">Objectif 5k net</div></div>
+    <div class="kpi"><div class="kpi-val">~15k€</div><div class="kpi-lab">Invest. départ</div></div>
+    <div class="kpi"><div class="kpi-val">60–70h</div><div class="kpi-lab">Semaine phase 1</div></div>
+    <div class="kpi"><div class="kpi-val">SASU</div><div class="kpi-lab">Structure idéale</div></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ============================================================ -->
+<!-- 01 — JURIDIQUE -->
+<!-- ============================================================ -->
+<div class="section" id="juridique">
+  <div class="sec-tag">Étape 01 — La fondation</div>
+  <div class="sec-title">Création de la structure<br>juridique</div>
+  <div class="sec-sub">Avant d'acheter la voiture, avant de travailler, il faut une entreprise solide. Un mauvais choix ici coûte des milliers d'euros. Voici la bonne décision, expliquée.</div>
+
+  <div class="alert a-vert"><strong>✅ Verdict sans appel : SASU au régime réel mensuel de TVA.</strong> Pas de micro-entrepreneur, pas d'EURL. La SASU offre la protection du patrimoine, la récupération totale de la TVA véhicule, l'optimisation dividendes et une image professionnelle immédiate.</div>
+
+  <div class="g3" style="margin-bottom:28px;">
+    <div class="card card-dark border-rouge">
+      <h3>Pourquoi pas micro-entrepreneur ?</h3>
+      <ul class="cl dark">
+        <li>❌ Impossible de récupérer la TVA sur le véhicule — perte de 2 500–4 000 €</li>
+        <li>❌ Plafond CA 77 700 €/an — bloquant dès M6–M7</li>
+        <li>❌ Aucune optimisation possible sur la rémunération</li>
+        <li>❌ Image moins professionnelle auprès des clients corporate</li>
+      </ul>
+    </div>
+    <div class="card card-dark border-vert">
+      <h3>Pourquoi la SASU ?</h3>
+      <ul class="cl dark">
+        <li>✅ TVA véhicule récupérée à 100% — 2 500 à 4 000 €</li>
+        <li>✅ CA illimité — aucun plafond</li>
+        <li>✅ Dividendes taxés à 30% flat tax (vs 45%+ en salaire)</li>
+        <li>✅ Patrimoine personnel protégé — capital minimum 1 €</li>
+        <li>✅ Évolutif : embauche futur chauffeur possible</li>
+      </ul>
+    </div>
+    <div class="card card-dark border-cyan">
+      <h3>Coûts & délais création</h3>
+      <ul class="cl dark">
+        <li><strong>Via plateforme en ligne</strong> — 250–350 € tout inclus</li>
+        <li><strong>Délai Kbis</strong> — 5 à 10 jours ouvrés</li>
+        <li><strong>Capital social</strong> — 1 € minimum (mettre 1 000 € conseillé)</li>
+        <li><strong>Numéro TVA intracom</strong> — 3 semaines après Kbis</li>
+        <li><strong>Compte bancaire pro</strong> — 24–48h en ligne</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Démarche</th><th>Où le faire</th><th>Délai</th><th>Coût</th><th>Priorité</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Créer la SASU</strong></td><td>Legalstart.fr / Indy.fr / Captain Contrat</td><td>5–10 jours</td><td>250–350 €</td><td><span class="badge b-rouge">JOUR 1</span></td></tr>
+      <tr><td><strong>Ouvrir compte pro</strong></td><td>Qonto.com / Shine.fr / Sumeria</td><td>24–48h</td><td>~9 €/mois</td><td><span class="badge b-rouge">JOUR 1</span></td></tr>
+      <tr><td><strong>Carte pro VTC</strong></td><td>ants.gouv.fr (après formation)</td><td>2–8 semaines</td><td>Inclus formation</td><td><span class="badge b-rouge">AVANT TOUT</span></td></tr>
+      <tr><td><strong>N° TVA intracom</strong></td><td>Impots.gouv.fr ou via comptable</td><td>3 semaines post-Kbis</td><td>Gratuit</td><td><span class="badge b-gold">URGENT</span></td></tr>
+      <tr><td><strong>Inscription Uber</strong></td><td>uber.com/fr/drive</td><td>3–7 jours</td><td>Gratuit</td><td><span class="badge b-gold">URGENT</span></td></tr>
+      <tr><td><strong>Inscription Bolt</strong></td><td>driver.bolt.eu</td><td>3–5 jours</td><td>Gratuit</td><td><span class="badge b-gold">URGENT</span></td></tr>
+      <tr><td><strong>Inscription Heetch</strong></td><td>driver.heetch.com</td><td>3–5 jours</td><td>Gratuit</td><td><span class="badge b-violet">MOIS 1</span></td></tr>
+      <tr><td><strong>Assurance VTC pro</strong></td><td>April Moto / AXA Pro / MAAF Pro</td><td>24–72h</td><td>150–280 €/mois</td><td><span class="badge b-rouge">AVANT DE ROULER</span></td></tr>
+      <tr><td><strong>Visite technique VTC</strong></td><td>Contrôle technique agréé</td><td>24h</td><td>80–120 €</td><td><span class="badge b-rouge">AVANT DE ROULER</span></td></tr>
+      <tr><td><strong>Badge télépéage pro</strong></td><td>Liber-t Business / APRR Pro</td><td>5–7 jours</td><td>Gratuit (débit diff.)</td><td><span class="badge b-violet">MOIS 1</span></td></tr>
+      <tr><td><strong>Expert-comptable</strong></td><td>Ordre des EC toulousains / Indy</td><td>1 semaine</td><td>80–150 €/mois</td><td><span class="badge b-violet">MOIS 1–2</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="alert a-gold" style="margin-top:24px;">
+    <strong>💡 Gérer seul la compta au début ?</strong> Oui, possible les 2–3 premiers mois avec <strong>Indy.fr</strong> (20 €/mois — conçu pour les indépendants, automatise la TVA). Passer à un expert-comptable quand le CA dépasse <strong>4 000 €/mois</strong> ou dès que tu envisages des dividendes. Le comptable coûte ~100 €/mois mais t'économise des milliers en optimisations fiscales.
+  </div>
+
+  <div style="margin-top:24px;">
+    <p style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--violet);margin-bottom:12px;">Liens directs — Création SASU</p>
+    <a class="link-pill" href="https://www.legalstart.fr" target="_blank">Legalstart.fr</a>
+    <a class="link-pill" href="https://www.indy.fr" target="_blank">Indy.fr</a>
+    <a class="link-pill" href="https://www.captaincontrat.com" target="_blank">Captain Contrat</a>
+    <a class="link-pill" href="https://qonto.com/fr" target="_blank">Qonto — Compte pro</a>
+    <a class="link-pill" href="https://www.shine.fr" target="_blank">Shine — Compte pro</a>
+    <a class="link-pill" href="https://www.ants.gouv.fr" target="_blank">ANTS — Carte VTC</a>
+    <a class="link-pill" href="https://www.impots.gouv.fr" target="_blank">Impots.gouv.fr</a>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 02 — VÉHICULE -->
+<!-- ============================================================ -->
+<div class="section" id="vehicule">
+  <div class="sec-tag">Étape 02 — L'outil de travail</div>
+  <div class="sec-title">Stratégie d'achat<br>du véhicule</div>
+  <div class="sec-sub">Le véhicule est ton outil principal. Un mauvais choix = pannes, image dégradée, clients perdus. Un bon choix = fiabilité, économies, satisfaction client.</div>
+
+  <div class="g3" style="margin-bottom:28px;">
+    <div class="card card-light border-gold">
+      <h3>🏆 Recommandations premium</h3>
+      <ul class="cl">
+        <li><strong>BMW Série 3 / 5</strong> — 2018–2022 — Image irréprochable, diesel économique, confort passager top</li>
+        <li><strong>Mercedes Classe E / CLA</strong> — Clientèle haut de gamme très sensible à la marque</li>
+        <li><strong>Tesla Model 3</strong> — Carburant 80% moins cher, image tech premium, TVA carburant 100% récupérable</li>
+        <li><strong>Skoda Superb</strong> — Habitacle XXL, fiabilité maximum, prix d'achat 30% sous BMW pour même confort</li>
+      </ul>
+    </div>
+    <div class="card card-light border-violet">
+      <h3>⚙️ Critères techniques indispensables</h3>
+      <ul class="cl">
+        <li><strong>Kilométrage</strong> max 120 000 km — au-delà, risque panne trop élevé</li>
+        <li><strong>Boîte automatique</strong> — obligatoire. Confort, image, économie de fatigue</li>
+        <li><strong>Diesel ou électrique</strong> — essence sur longs trajets = marges grignotées</li>
+        <li><strong>Carnet entretien complet</strong> — exiger le carnet tamponné sans exception</li>
+        <li><strong>Pas de carrosserie abîmée</strong> — première impression client = décisif</li>
+      </ul>
+    </div>
+    <div class="card card-light border-rouge">
+      <h3>❌ Ce qu'il faut absolument éviter</h3>
+      <ul class="cl">
+        <li>Véhicule > 180 000 km — 1 panne = 3 jours sans revenus</li>
+        <li>Boîte manuelle — fatigue, image non premium</li>
+        <li>Hybride rechargeable pré-2020 — batterie dégradée, pannes fréquentes</li>
+        <li>Sans historique entretien — risque majeur caché</li>
+        <li>Véhicule accidenté non déclaré — vérifier Histovec.interieur.gouv.fr</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="alert a-cyan" style="margin-bottom:24px;">
+    <strong>🇳🇱 Stratégie achat Pays-Bas — Le processus exact pas à pas</strong><br><br>
+    <strong>Prérequis :</strong> Avoir son numéro TVA intracommunautaire français (FR + 11 chiffres).<br><br>
+    <strong>Étape 1</strong> — Chercher sur autoscout24.nl / marktplaats.nl / mobile.de — filtrer "vendeurs professionnels"<br>
+    <strong>Étape 2</strong> — Vérifier le numéro TVA du vendeur sur ec.europa.eu/taxation_customs/vies (gratuit, officiel)<br>
+    <strong>Étape 3</strong> — Contacter le vendeur en donnant ton numéro TVA FR → il comprend immédiatement = facturation HT<br>
+    <strong>Étape 4</strong> — La facture indique : prix HT + "Livraison intracommunautaire exonérée — Art.138 Dir.2006/112" + 0 € de TVA<br>
+    <strong>Étape 5</strong> — Tu rentres en France avec le véhicule<br>
+    <strong>Étape 6</strong> — Sur ta prochaine CA3 : tu déclares une "acquisition intracommunautaire" — tu inscris la TVA française à la fois en TVA due ET en TVA déductible → résultat net = 0 €<br><br>
+    <strong>Économie réelle vs achat France : 1 500 à 3 000 € selon le véhicule.</strong>
+  </div>
+
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Scénario d'achat</th><th>Prix apparent</th><th>TVA récupérée</th><th>Coût réel net</th><th>Complexité</th></tr></thead>
+    <tbody>
+      <tr><td><strong>France — concessionnaire TTC</strong></td><td>18 000 € TTC</td><td>+3 000 € remboursés sous 60j</td><td><strong>15 000 €</strong></td><td><span class="badge b-vert">Simple</span></td></tr>
+      <tr><td><strong>Pays-Bas — particulier</strong></td><td>13 500 €</td><td>0 € (pas de TVA)</td><td><strong>13 500 €</strong></td><td><span class="badge b-vert">Simple</span></td></tr>
+      <tr><td><strong>Pays-Bas — régime de la marge</strong></td><td>14 000 €</td><td>0 € (marge, pas de TVA facturée)</td><td><strong>14 000 €</strong></td><td><span class="badge b-vert">Simple</span></td></tr>
+      <tr style="background:#f0fdf4;"><td><strong>🏆 Pays-Bas — pro intracom ← OPTIMAL</strong></td><td>12 500 € HT</td><td>Neutralisée — 0 € net (autoliquidation)</td><td><strong style="color:var(--vert)">12 500 €</strong></td><td><span class="badge b-violet">Moyen</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div style="margin-top:22px;">
+    <a class="link-pill" href="https://www.autoscout24.nl" target="_blank">AutoScout24 NL</a>
+    <a class="link-pill" href="https://www.marktplaats.nl" target="_blank">Marktplaats NL</a>
+    <a class="link-pill" href="https://www.mobile.de" target="_blank">Mobile.de (DE)</a>
+    <a class="link-pill" href="https://ec.europa.eu/taxation_customs/vies/" target="_blank">Vérifier TVA intracom UE</a>
+    <a class="link-pill" href="https://histovec.interieur.gouv.fr" target="_blank">Histovec — Historique véhicule</a>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 03 — FISCAL / TVA -->
+<!-- ============================================================ -->
+<div class="section" id="fiscal">
+  <div class="sec-tag">Étape 03 — L'optimisation</div>
+  <div class="sec-title">Fiscal, TVA<br>& déductions</div>
+  <div class="sec-sub">Comprendre ces mécanismes, c'est récupérer 3 000–5 000 € supplémentaires par an. Ignorer ces règles, c'est jeter de l'argent par les fenêtres chaque mois.</div>
+
+  <div class="g2" style="margin-bottom:28px;">
+    <div>
+      <div class="card card-deep border-violet" style="margin-bottom:20px;">
+        <h3>La mécanique TVA en 4 lignes</h3>
+        <p style="color:#c4b5fd;font-size:13.5px;line-height:1.8;">
+          Chaque mois, tu déposes une déclaration <strong style="color:white;">CA3</strong>.<br>
+          <span style="color:var(--gold);">TVA collectée</span> (sur tes courses) <strong style="color:white;"> MOINS </strong>
+          <span style="color:var(--gold);">TVA déductible</span> (sur tes achats pro) = ce que tu verses à l'État.<br>
+          Si tu as acheté un véhicule ce mois : <span style="color:#6ee7b7;">crédit de TVA → l'État te rembourse sous 30 jours.</span>
+        </p>
+      </div>
+      <div class="card card-accent border-violet">
+        <h3>Fréquence des déclarations</h3>
+        <table>
+          <thead><tr><th>Régime</th><th>CA annuel</th><th>Fréquence</th></tr></thead>
+          <tbody>
+            <tr><td>Mensuel <span class="badge b-vert">Conseillé au démarrage</span></td><td>Peu importe</td><td><strong>12× par an</strong></td></tr>
+            <tr><td>Trimestriel</td><td>&lt; 80 000 €</td><td>4× par an</td></tr>
+          </tbody>
+        </table>
+        <p class="note">Au démarrage → mensuel obligatoirement. Tu récupères la TVA du véhicule dès le 1er mois au lieu d'attendre 3 mois.</p>
+      </div>
+    </div>
+    <div class="card card-light">
+      <h3>Tableau complet de déductibilité TVA</h3>
+      <table>
+        <thead><tr><th>Dépense</th><th>TVA récup.</th></tr></thead>
+        <tbody>
+          <tr><td>Achat véhicule (usage 100% pro)</td><td><span class="badge b-vert">100 %</span></td></tr>
+          <tr><td>Entretien / révisions</td><td><span class="badge b-vert">100 %</span></td></tr>
+          <tr><td>Pneus / pneumatiques</td><td><span class="badge b-vert">100 %</span></td></tr>
+          <tr><td>Lavage professionnel</td><td><span class="badge b-vert">100 %</span></td></tr>
+          <tr><td>Stationnement / parking</td><td><span class="badge b-vert">100 %</span></td></tr>
+          <tr><td>Péages autoroutiers</td><td><span class="badge b-vert">100 %</span></td></tr>
+          <tr><td>Diesel / Gazole</td><td><span class="badge b-gold">80 %</span></td></tr>
+          <tr><td>Essence SP95 / SP98</td><td><span class="badge b-gold">80 %</span></td></tr>
+          <tr><td>Électricité recharge (VE)</td><td><span class="badge b-vert">100 %</span></td></tr>
+          <tr><td>Téléphone pro (usage exclusif)</td><td><span class="badge b-vert">100 %</span></td></tr>
+          <tr><td>Forfait téléphone mixte</td><td><span class="badge b-gold">50 %</span></td></tr>
+          <tr><td>Repas d'affaires (avec facture pro)</td><td><span class="badge b-vert">100 %</span></td></tr>
+          <tr><td>Expert-comptable</td><td><span class="badge b-vert">100 %</span></td></tr>
+          <tr><td>Logiciels / applis pro</td><td><span class="badge b-vert">100 %</span></td></tr>
+          <tr><td>Assurance véhicule ⚠️</td><td><span class="badge b-rouge">0 % — exonérée</span></td></tr>
+        </tbody>
+      </table>
+      <p class="note">Assurance : exonérée de TVA en France → aucune TVA à récupérer. Mais déductible à 100% en charge comptable.</p>
+    </div>
+  </div>
+
+  <div class="alert a-default">
+    <strong>💡 Optimisation rémunération SASU — le schéma gagnant :</strong><br>
+    Verser un salaire de <strong>1 500 €/mois</strong> (minimum pour cotisations retraite) + le surplus en <strong>dividendes taxés à 30%</strong> (flat tax PFU). Sur un CA de 10 000 €/mois avec 8 000 € de bénéfice, cette stratégie économise environ <strong>800–1 500 €/mois</strong> vs tout en salaire. À valider avec ton expert-comptable.
+  </div>
+  <div style="margin-top:20px;">
+    <a class="link-pill" href="https://www.impots.gouv.fr/professionnel/la-tva" target="_blank">Impots.gouv — TVA Pro</a>
+    <a class="link-pill" href="https://www.indy.fr" target="_blank">Indy — Compta automatisée</a>
+    <a class="link-pill" href="https://pennylane.com/fr" target="_blank">Pennylane</a>
+    <a class="link-pill" href="https://www.dext.com/fr" target="_blank">Dext — Scan factures</a>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 04 — PLAN M×M -->
+<!-- ============================================================ -->
+<div class="section" id="plan">
+  <div class="sec-tag">Étape 04 — La feuille de route</div>
+  <div class="sec-title">Plan d'action<br>mois par mois</div>
+  <div class="sec-sub">12 mois. Chaque mois a un nom, un objectif, des actions précises et des KPIs clairs. Pas d'improvisation — tu suis le plan.</div>
+
+  <div class="tl">
+
+    <div class="tl-item">
+      <div class="tl-dot" style="background:var(--rouge);box-shadow:0 0 0 2px var(--rouge),0 0 16px rgba(239,68,68,.4);"></div>
+      <div class="tl-month">M−2 à M0 — Pré-lancement</div>
+      <div class="tl-title">Construction des fondations</div>
+      <div class="tl-desc">Zéro revenu, mais chaque jour compte. La qualité de cette phase détermine la rapidité de ton décollage.</div>
+      <ul class="cl">
+        <li><strong>Créer la SASU</strong> — via Legalstart ou Indy (~300 €, 5–10 jours)</li>
+        <li><strong>Ouvrir compte bancaire pro</strong> — Qonto ou Shine (~9 €/mois)</li>
+        <li><strong>Obtenir numéro TVA intracom</strong> — via impots.gouv.fr (délai 3 sem. post-Kbis)</li>
+        <li><strong>Acheter le véhicule</strong> — appliquer la stratégie Pays-Bas si possible</li>
+        <li><strong>Souscrire assurance VTC professionnelle</strong> — comparer April Moto, AXA Pro, MAAF Pro</li>
+        <li><strong>Passer visite technique VTC</strong> obligatoire avant toute course</li>
+        <li><strong>S'inscrire sur Uber + Bolt + Heetch</strong> — dossier complet, validation sous 3–7 jours</li>
+        <li><strong>Installer Indy ou Dext</strong> — zéro reçu perdu dès le jour 1</li>
+        <li><strong>Commander 500 cartes de visite</strong> premium (Vistaprint, ~20 €)</li>
+        <li><strong>Badge télépéage pro</strong> — Liber-t Business (facture mensuelle au nom SASU)</li>
+      </ul>
+      <div class="tl-chips">
+        <div class="chip">Investissement : 15–20 000 €</div>
+        <div class="chip">TVA récupérable : 2 500–3 500 €</div>
+        <div class="chip">CA : 0 €</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-month">Mois 1 — Le baptême du feu</div>
+      <div class="tl-title">Apprentissage intensif & algorithme</div>
+      <div class="tl-desc">Objectif : 5 étoiles, 5 étoiles, 5 étoiles. L'algorithme Uber/Bolt booste les profils bien notés. Ce mois-ci, tu travailles POUR l'algorithme, pas pour l'argent.</div>
+      <ul class="cl">
+        <li><strong>Semaines 1–2</strong> — Accepter TOUTES les courses. L'algorithme teste ta fiabilité. Un refus trop tôt = pénalité de visibilité durable</li>
+        <li><strong>Identifier les zones chaudes Toulouse</strong> — Blagnac aéroport, gare Matabiau, Capitole, Purpan, Colomiers, Jean-Jaurès</li>
+        <li><strong>Déposer la 1ère CA3</strong> dès la fin du mois — récupérer la TVA du véhicule</li>
+        <li><strong>Tenir un carnet de bord</strong> — heure, zone, montant, durée de chaque course → identifier les patterns rentables</li>
+        <li><strong>Demander les premiers avis Google</strong> à chaque client satisfait (message post-course simple)</li>
+        <li><strong>Distribuer cartes de visite</strong> dans 5 hôtels 4* — Crowne Plaza Blagnac, Novotel Centre, Grand Hôtel de l'Opéra, Pullman, Mercure</li>
+        <li><strong>Créer profil Google My Business</strong> "VTC Toulouse + ton prénom"</li>
+        <li><strong>Semaines 3–4</strong> — Commencer à réduire les créneaux 10h–16h (creux) — se reposer ou prospecter</li>
+      </ul>
+      <div class="tl-chips">
+        <div class="chip">CA cible : 3 500–4 500 €</div>
+        <div class="chip">Net estimé : 1 800–2 200 €</div>
+        <div class="chip">Courses/jour : 8–12</div>
+        <div class="chip">Note cible : 4,85+</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-month">Mois 2–3 — Optimisation</div>
+      <div class="tl-title">Affiner les créneaux, prospecter, structurer</div>
+      <div class="tl-desc">Tu connais maintenant tes meilleures heures et zones. Tu arrêtes de gaspiller ton énergie sur des créneaux creux et tu passes en mode actif sur la clientèle directe.</div>
+      <ul class="cl">
+        <li><strong>Analyser ses données</strong> — quelles zones, heures, types de courses sont les plus rentables par heure travaillée</li>
+        <li><strong>Éliminer les plages 10h–16h en semaine</strong> — se reposer ou prospecter à ces heures</li>
+        <li><strong>Contacter les assistantes de direction</strong> de PME et grands groupes — Airbus, Thales, Pierre Fabre, Sopra Steria (email + LinkedIn + appel direct)</li>
+        <li><strong>Créer un site web 1 page</strong> sur Carrd.co (~2 €/mois) — nom, photo, zones desservies, numéro pro, formulaire de réservation</li>
+        <li><strong>Mettre en place Calendly</strong> (gratuit) pour les réservations directes</li>
+        <li><strong>Proposer un tarif forfaitaire aéroport</strong> — 45 € Toulouse centre ↔ Blagnac fixe affiché sur le site</li>
+        <li><strong>Passer au régime mensuel CA3</strong> si ce n'est pas déjà le cas</li>
+      </ul>
+      <div class="tl-chips">
+        <div class="chip">CA cible : 5 000–6 500 €</div>
+        <div class="chip">Net estimé : 2 500–3 200 €</div>
+        <div class="chip">Premiers clients directs</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot g"></div>
+      <div class="tl-month">Mois 4–5 — Décollage</div>
+      <div class="tl-title">Construire la base clients réguliers</div>
+      <div class="tl-desc">C'est le tournant. Chaque client fidélisé = 27% de commission Uber en moins. Objectif : 25–30% du CA hors plateforme.</div>
+      <ul class="cl">
+        <li><strong>Signer un partenariat avec 1–2 hôtels</strong> — tu prends leurs clients VIP à tarif négocié, ils t'envoient exclusivement (proposer 10% de commission au concierge)</li>
+        <li><strong>Démarcher cabinets d'avocats et notaires</strong> centre Toulouse — clientèle aisée, discrète, très régulière</li>
+        <li><strong>Créer une offre abonnement entreprise</strong> — 20 courses/mois en lot à tarif préférentiel, facture mensuelle unique</li>
+        <li><strong>Mettre en place facturation directe</strong> — Indy ou Sumeria (gratuit jusqu'à 50 factures/mois)</li>
+        <li><strong>Consulter l'expert-comptable</strong> pour stratégie dividendes si CA dépasse 5 000 €/mois</li>
+        <li><strong>Avis Google</strong> — objectif 30+ avis, note 4,9+ → booste le référencement local massivement</li>
+      </ul>
+      <div class="tl-chips">
+        <div class="chip">CA cible : 7 000–9 000 €</div>
+        <div class="chip">Net estimé : 3 500–4 500 €</div>
+        <div class="chip">Seuil rentabilité atteint</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot gold"></div>
+      <div class="tl-month">Mois 6–7 — L'objectif</div>
+      <div class="tl-title">5 000 € net — Mission accomplie</div>
+      <div class="tl-desc">50–60% du CA vient de clients directs. Les plateformes ne sont plus qu'un filet de sécurité. Tu contrôles ta tarification et ton emploi du temps.</div>
+      <ul class="cl">
+        <li><strong>Clientèle directe &gt; 50%</strong> — indépendance des algorithmes de plateformes</li>
+        <li><strong>Tarification premium assumée</strong> — +20–25% vs plateformes pour les clients directs (ils acceptent pour la régularité et la confiance)</li>
+        <li><strong>Développer le segment événementiel</strong> — mariages, séminaires, galas — tarifs 150–300 € la prestation</li>
+        <li><strong>Optimisation IS + dividendes</strong> avec ton comptable — l'écart fiscal devient très significatif</li>
+        <li><strong>Penser long terme</strong> — mise à disposition d'un second véhicule à un autre chauffeur ? Location VTC ? Scale possible.</li>
+      </ul>
+      <div class="tl-chips">
+        <div class="chip success">CA cible : 10 000–12 000 €</div>
+        <div class="chip success">Net estimé : 5 000–6 000 € ✅</div>
+        <div class="chip success">Objectif atteint</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 05 — PLANNING -->
+<!-- ============================================================ -->
+<div class="section" id="planning">
+  <div class="sec-tag">Étape 05 — L'organisation</div>
+  <div class="sec-title">Emploi du temps type<br>— semaine optimale</div>
+  <div class="sec-sub">La discipline du planning, c'est 30% de revenus en plus. Travailler plus ne suffit pas — il faut travailler aux bonnes heures, aux bons endroits.</div>
+
+  <div class="alert a-rouge" style="margin-bottom:28px;">
+    <strong>⚠️ Réalité brutale :</strong> Atteindre 5 000 € net en phase 1 nécessite <strong>60–70h/semaine</strong>. C'est un sprint de 4–6 mois. Ce n'est pas tenable sur 5 ans, mais c'est le prix de l'indépendance rapide. À partir de M6, tu peux redescendre à 45–50h grâce à la clientèle directe mieux rémunérée.
+  </div>
+
+  <div class="schedule-grid" style="margin-bottom:3px;">
+    <div class="sched-head"></div>
+    <div class="sched-head">LUN</div>
+    <div class="sched-head">MAR</div>
+    <div class="sched-head">MER</div>
+    <div class="sched-head">JEU</div>
+    <div class="sched-head">VEN ⭐</div>
+    <div class="sched-head">SAM ⭐</div>
+    <div class="sched-head">DIM</div>
+  </div>
+  <div class="schedule-grid">
+    <div class="sched-time">5h–7h</div>
+    <div class="sched-cell s-rest">Repos</div>
+    <div class="sched-cell s-peak">PEAK ✈️</div>
+    <div class="sched-cell s-peak">PEAK ✈️</div>
+    <div class="sched-cell s-peak">PEAK ✈️</div>
+    <div class="sched-cell s-peak">PEAK ✈️</div>
+    <div class="sched-cell s-rest">Repos</div>
+    <div class="sched-cell s-peak">PEAK ✈️</div>
+
+    <div class="sched-time">7h–10h</div>
+    <div class="sched-cell s-work">Actif</div>
+    <div class="sched-cell s-peak">PEAK 💼</div>
+    <div class="sched-cell s-peak">PEAK 💼</div>
+    <div class="sched-cell s-peak">PEAK 💼</div>
+    <div class="sched-cell s-peak">PEAK 💼</div>
+    <div class="sched-cell s-work">Actif</div>
+    <div class="sched-cell s-peak">PEAK ✈️</div>
+
+    <div class="sched-time">10h–14h</div>
+    <div class="sched-cell s-work">Actif</div>
+    <div class="sched-cell s-mid">Creux ⚡</div>
+    <div class="sched-cell s-mid">Creux ⚡</div>
+    <div class="sched-cell s-mid">Creux ⚡</div>
+    <div class="sched-cell s-work">Actif</div>
+    <div class="sched-cell s-work">Actif</div>
+    <div class="sched-cell s-rest">Repos</div>
+
+    <div class="sched-time">14h–17h</div>
+    <div class="sched-cell s-rest">REPOS</div>
+    <div class="sched-cell s-rest">REPOS</div>
+    <div class="sched-cell s-rest">REPOS</div>
+    <div class="sched-cell s-rest">REPOS</div>
+    <div class="sched-cell s-work">Actif</div>
+    <div class="sched-cell s-work">Actif</div>
+    <div class="sched-cell s-rest">REPOS</div>
+
+    <div class="sched-time">17h–21h</div>
+    <div class="sched-cell s-peak">PEAK 💼</div>
+    <div class="sched-cell s-peak">PEAK 💼</div>
+    <div class="sched-cell s-peak">PEAK 💼</div>
+    <div class="sched-cell s-peak">PEAK 💼</div>
+    <div class="sched-cell s-peak">PEAK 🔥</div>
+    <div class="sched-cell s-peak">PEAK 🔥</div>
+    <div class="sched-cell s-rest">Repos</div>
+
+    <div class="sched-time">21h–2h</div>
+    <div class="sched-cell s-rest">Repos</div>
+    <div class="sched-cell s-rest">Repos</div>
+    <div class="sched-cell s-rest">Repos</div>
+    <div class="sched-cell s-rest">Repos</div>
+    <div class="sched-cell s-peak">NUIT 🎉</div>
+    <div class="sched-cell s-peak">NUIT 🎉</div>
+    <div class="sched-cell s-rest">Repos</div>
+  </div>
+
+  <div style="margin-top:14px;display:flex;gap:20px;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:10px;">
+    <span style="display:flex;align-items:center;gap:7px;"><span style="width:14px;height:14px;background:#1e0b4a;display:inline-block;border-radius:2px;"></span> PEAK — Priorité absolue</span>
+    <span style="display:flex;align-items:center;gap:7px;"><span style="width:14px;height:14px;background:#0f172a;display:inline-block;border-radius:2px;"></span> Actif — Correct</span>
+    <span style="display:flex;align-items:center;gap:7px;"><span style="width:14px;height:14px;background:#2d1b00;display:inline-block;border-radius:2px;"></span> Creux ⚡ — Pause conseillée</span>
+    <span style="display:flex;align-items:center;gap:7px;"><span style="width:14px;height:14px;background:#f3eeff;border:1px solid #ddd;display:inline-block;border-radius:2px;"></span> REPOS — Obligatoire</span>
+  </div>
+
+  <div class="g2" style="margin-top:28px;">
+    <div class="card card-accent border-gold">
+      <h3>⭐ Vendredi — La journée en or</h3>
+      <ul class="cl">
+        <li><strong>6h–9h</strong> — Cadres en déplacement, aéroport Blagnac — courses 40–70 €</li>
+        <li><strong>12h–14h</strong> — Déjeuners d'affaires — courses courtes mais fréquentes</li>
+        <li><strong>17h–20h</strong> — Pics retours bureau — forte demande</li>
+        <li><strong>20h–2h</strong> — Surge pricing × 1,5 à 3 — restauration, bars, fêtes privées</li>
+        <li class="note">Vendredi seul peut représenter 25–30% des revenus de la semaine</li>
+      </ul>
+    </div>
+    <div class="card card-accent border-vert">
+      <h3>🎯 Créneaux les plus rentables à Toulouse</h3>
+      <ul class="cl">
+        <li><strong>Aéroport Blagnac 5h30–9h30</strong> — transferts business 45–65 €/course</li>
+        <li><strong>Matchs Stade Toulousain</strong> — Ernest Wallon, 15 000 places — pics × 3</li>
+        <li><strong>Dimanche matin 6h–10h</strong> — retours week-end, aéroport, peu de concurrence</li>
+        <li><strong>Grands événements Toulouse</strong> — Rio Loco (juin), Marathon (oct), Capitole en Fête (déc)</li>
+        <li><strong>Rentrée septembre</strong> — meilleur mois de l'année. Plein gaz dès le 1er.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 06 — CALENDRIER ANNUEL -->
+<!-- ============================================================ -->
+<div class="section" id="calendrier">
+  <div class="sec-tag">Étape 06 — La saisonnalité</div>
+  <div class="sec-title">Calendrier annuel<br>Toulouse — Quand travailler ?</div>
+  <div class="sec-sub">Chaque mois n'est pas égal. Connaître la saisonnalité, c'est choisir ses vacances intelligemment et être à 100% les bons mois.</div>
+
+  <div class="cal-grid" style="margin-bottom:28px;">
+    <div class="cal-month"><div class="cal-month-name">Jan</div><div class="cal-bar cal-low" style="height:28px;"><span class="cal-score" style="font-size:16px;">3</span></div><div class="cal-label">Creux<br>post-fêtes</div></div>
+    <div class="cal-month"><div class="cal-month-name">Fév</div><div class="cal-bar cal-mid" style="height:38px;"><span class="cal-score" style="font-size:16px;">5</span></div><div class="cal-label">Mid<br>reprise</div></div>
+    <div class="cal-month"><div class="cal-month-name">Mar</div><div class="cal-bar cal-good" style="height:50px;"><span class="cal-score">7</span></div><div class="cal-label">Business<br>actif</div></div>
+    <div class="cal-month"><div class="cal-month-name">Avr</div><div class="cal-bar cal-good" style="height:50px;"><span class="cal-score">7</span></div><div class="cal-label">Pâques<br>+ ponts</div></div>
+    <div class="cal-month"><div class="cal-month-name">Mai</div><div class="cal-bar cal-peak" style="height:60px;"><span class="cal-score">9</span></div><div class="cal-label">Ponts<br>événements</div></div>
+    <div class="cal-month"><div class="cal-month-name">Jun</div><div class="cal-bar cal-peak" style="height:55px;"><span class="cal-score">8</span></div><div class="cal-label">Rio Loco<br>fin d'année</div></div>
+    <div class="cal-month"><div class="cal-month-name">Jul</div><div class="cal-bar cal-mid" style="height:40px;"><span class="cal-score">5</span></div><div class="cal-label">Mixte<br>aéroport ok</div></div>
+    <div class="cal-month"><div class="cal-month-name">Aoû</div><div class="cal-bar cal-low" style="height:28px;"><span class="cal-score" style="font-size:16px;">3</span></div><div class="cal-label">Business<br>mort</div></div>
+    <div class="cal-month"><div class="cal-month-name">Sep</div><div class="cal-bar cal-peak" style="height:65px;"><span class="cal-score" style="font-size:22px;">10</span></div><div class="cal-label">🔥 Meilleur<br>mois</div></div>
+    <div class="cal-month"><div class="cal-month-name">Oct</div><div class="cal-bar cal-peak" style="height:60px;"><span class="cal-score">9</span></div><div class="cal-label">Rugby<br>+ events</div></div>
+    <div class="cal-month"><div class="cal-month-name">Nov</div><div class="cal-bar cal-good" style="height:50px;"><span class="cal-score">7</span></div><div class="cal-label">Actif<br>peu concu.</div></div>
+    <div class="cal-month"><div class="cal-month-name">Déc</div><div class="cal-bar cal-good" style="height:52px;"><span class="cal-score">7</span></div><div class="cal-label">Fêtes<br>entreprises</div></div>
+  </div>
+
+  <div class="g2">
+    <div class="card card-light border-vert">
+      <h3>✅ Prendre ses vacances ICI</h3>
+      <ul class="cl">
+        <li><strong>Janvier semaines 2–3</strong> — Le creux le plus marqué de l'année. Business mort post-fêtes. Tu perds le minimum en partant là.</li>
+        <li><strong>Deuxième quinzaine d'août</strong> — Le business est de toute façon quasi-mort. Autant se reposer vraiment et revenir à 100% pour septembre.</li>
+        <li><strong>Ne JAMAIS prendre ses vacances en juillet</strong> comme tout le monde — l'aéroport est au max, les prix VTC sont élevés car moins de chauffeurs disponibles. C'est au contraire une opportunité.</li>
+      </ul>
+    </div>
+    <div class="card card-light border-rouge">
+      <h3>❌ Ne JAMAIS partir ces mois-ci</h3>
+      <ul class="cl">
+        <li><strong>Septembre</strong> — Le meilleur mois de l'année. Chaque jour de vacances = perte nette maximale.</li>
+        <li><strong>Mai</strong> — 4 jours fériés, ponts, surge pricing tous les week-ends</li>
+        <li><strong>Octobre</strong> — Saison rugby Stade Toulousain + événements. Très fort.</li>
+        <li><strong>31 décembre</strong> — La nuit la plus rentable de l'année sans exception. Surge × 3–5.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 07 — PIÈGES -->
+<!-- ============================================================ -->
+<div class="section" id="pieges">
+  <div class="sec-tag">Étape 07 — Les dangers</div>
+  <div class="sec-title">10 pièges qui tuent<br>une activité VTC</div>
+  <div class="sec-sub">Ces erreurs sont commises par 80% des chauffeurs VTC qui échouent ou plafonnent. Tu les connais — tu les évites.</div>
+
+  <div class="trap">
+    <div class="trap-title">⚠️ Piège 1 — Démarrer en micro-entrepreneur</div>
+    <p>Attrait apparent : simplicité. Réalité : perte immédiate de 2 500–4 000 € de TVA sur le véhicule, plafond bloquant à 77 700 €, aucune optimisation fiscale possible. 80% des VTC qui plafonnent sont en micro.</p>
+    <div class="fix">✅ Fix : SASU dès le premier jour. La complexité supplémentaire vaut 3 000 € récupérés dès la première année.</div>
+  </div>
+
+  <div class="trap">
+    <div class="trap-title">⚠️ Piège 2 — Acheter un véhicule sans vérifier l'historique</div>
+    <p>Un véhicule accidenté non déclaré, reconditionné et revendu. 1 panne = 3–5 jours d'immobilisation = 1 500–2 500 € de revenus perdus + coût réparation.</p>
+    <div class="fix">✅ Fix : Toujours vérifier sur Histovec.interieur.gouv.fr (gratuit, officiel). Exiger le carnet d'entretien complet. Faire vérifier par un mécanicien indépendant avant achat.</div>
+  </div>
+
+  <div class="trap">
+    <div class="trap-title">⚠️ Piège 3 — Être 100% dépendant des plateformes</div>
+    <p>Uber peut changer son algorithme, baisser ses tarifs ou augmenter ses commissions du jour au lendemain. Des centaines de chauffeurs ont vu leurs revenus chuter de 30% en 48h après une mise à jour d'algorithme.</p>
+    <div class="fix">✅ Fix : Objectif 50% clients directs dès le M5. Commence à prospecter dès le M2. Chaque client direct = +27% de marge immédiate.</div>
+  </div>
+
+  <div class="trap">
+    <div class="trap-title">⚠️ Piège 4 — Ne pas garder ses factures</div>
+    <p>Un ticket de carburant jeté = 80% de TVA perdue. Sur un plein de 80 €, c'est 13 € volatilisés. Sur une année → 500–800 € de TVA non récupérée. Sans parler du risque en cas de contrôle fiscal.</p>
+    <div class="fix">✅ Fix : App de scan dès le premier jour (Indy ou Dext). Photographier chaque reçu immédiatement. C'est une habitude à prendre en 7 jours.</div>
+  </div>
+
+  <div class="trap">
+    <div class="trap-title">⚠️ Piège 5 — Mélanger compte personnel et professionnel</div>
+    <p>Payer une dépense pro avec la carte perso (ou vice versa) = retraitement comptable coûteux, perte de déductibilité, risque de requalification par l'URSSAF.</p>
+    <div class="fix">✅ Fix : Compte bancaire pro dès J1. Tout ce qui touche à l'activité passe par ce compte. Sans aucune exception.</div>
+  </div>
+
+  <div class="trap">
+    <div class="trap-title">⚠️ Piège 6 — Travailler 70h/semaine sans journée de repos</div>
+    <p>L'épuisement physique sur un métier de conduite est dangereux et légalement encadré. Accident en état de fatigue = fin d'activité, responsabilité pénale, invalidation assurance.</p>
+    <div class="fix">✅ Fix : 1 journée complète de repos par semaine obligatoire — légalement et physiquement. Lundi ou dimanche selon ta configuration. Pas négociable.</div>
+  </div>
+
+  <div class="trap">
+    <div class="trap-title">⚠️ Piège 7 — Pas de trésorerie de sécurité</div>
+    <p>Une boîte de vitesse qui lâche = 2 000 € de réparation. Sans réserve, tu empruntes ou tu t'arrêtes de travailler. C'est le début de l'engrenage inverse.</p>
+    <div class="fix">✅ Fix : Constituer un matelas de 2 mois de charges (~3 500–5 000 €) avant de te verser le maximum en dividendes. Ce matelas reste sur le compte SASU.</div>
+  </div>
+
+  <div class="trap">
+    <div class="trap-title">⚠️ Piège 8 — Chasser les zones de surge pricing sans stratégie</div>
+    <p>Le surge attire tous les chauffeurs au même endroit. Tu perds 20 min pour aller sur la zone et la surge est retombée à ton arrivée. Tu t'éloignes de tes zones habituelles et rates tes clients réguliers.</p>
+    <div class="fix">✅ Fix : Ne pas courir après les surges à plus de 5 min de trajet. La régularité bat le surge. 8 courses normales &gt; 4 courses en surge avec 30 min de déplacement à vide.</div>
+  </div>
+
+  <div class="trap">
+    <div class="trap-title">⚠️ Piège 9 — Utiliser le véhicule pro à titre personnel</div>
+    <p>Si tu utilises ta BMW pro pour aller en vacances ou faire les courses le week-end : tu perds le droit à la déduction totale de TVA, tu compliques la comptabilité et tu t'exposes à un redressement URSSAF.</p>
+    <div class="fix">✅ Fix : Véhicule pro = pro uniquement. Si besoin d'un véhicule perso, garde ta vieille voiture ou loue ponctuellement (Getaround). L'économie fiscale justifie largement ce choix.</div>
+  </div>
+
+  <div class="trap">
+    <div class="trap-title">⚠️ Piège 10 — Attendre M6 pour prospecter les clients directs</div>
+    <p>Le développement d'une clientèle directe prend du temps : 2–3 mois de contacts avant les premières courses régulières. Commencer au M5 = clients directs seulement au M8. Tu travailles pour Uber pendant 8 mois au lieu de 4.</p>
+    <div class="fix">✅ Fix : Cartes de visite en hôtels dès la semaine 1. LinkedIn pro et Google My Business dès le mois 1. Site web dès le mois 2. La graine se plante tôt.</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 08 — RESSOURCES -->
+<!-- ============================================================ -->
+<div class="section" id="ressources">
+  <div class="sec-tag">Étape 08 — La boîte à outils</div>
+  <div class="sec-title">Toutes les ressources<br>essentielles</div>
+  <div class="sec-sub">Chaque lien a été sélectionné pour son utilité directe et opérationnelle.</div>
+
+  <div class="g3" style="margin-bottom:32px;">
+    <div class="card card-deep border-cyan">
+      <h3>🏛️ Administratif & juridique</h3>
+      <div style="margin-top:8px;">
+        <a class="link-pill" href="https://www.ants.gouv.fr" target="_blank">ANTS — Carte pro VTC</a>
+        <a class="link-pill" href="https://www.legalstart.fr" target="_blank">Legalstart — Créer SASU</a>
+        <a class="link-pill" href="https://www.indy.fr" target="_blank">Indy — SASU + compta</a>
+        <a class="link-pill" href="https://www.captaincontrat.com" target="_blank">Captain Contrat</a>
+        <a class="link-pill" href="https://www.impots.gouv.fr" target="_blank">Impots.gouv.fr</a>
+        <a class="link-pill" href="https://ec.europa.eu/taxation_customs/vies/" target="_blank">Vérifier TVA intracom UE</a>
+        <a class="link-pill" href="https://histovec.interieur.gouv.fr" target="_blank">Histovec — Véhicule</a>
+      </div>
+    </div>
+    <div class="card card-deep border-gold">
+      <h3>💻 Outils business quotidiens</h3>
+      <div style="margin-top:8px;">
+        <a class="link-pill" href="https://qonto.com/fr" target="_blank">Qonto — Compte pro</a>
+        <a class="link-pill" href="https://www.shine.fr" target="_blank">Shine — Compte pro</a>
+        <a class="link-pill" href="https://pennylane.com/fr" target="_blank">Pennylane — Compta</a>
+        <a class="link-pill" href="https://www.dext.com/fr" target="_blank">Dext — Scan factures</a>
+        <a class="link-pill" href="https://carrd.co" target="_blank">Carrd.co — Site 1 page</a>
+        <a class="link-pill" href="https://calendly.com" target="_blank">Calendly — Réservation</a>
+        <a class="link-pill" href="https://business.google.com" target="_blank">Google My Business</a>
+      </div>
+    </div>
+    <div class="card card-deep border-vert">
+      <h3>🚗 Plateformes & véhicule</h3>
+      <div style="margin-top:8px;">
+        <a class="link-pill" href="https://www.uber.com/fr/en/drive/" target="_blank">Uber — Devenir chauffeur</a>
+        <a class="link-pill" href="https://driver.bolt.eu/fr-fr/" target="_blank">Bolt — Inscription</a>
+        <a class="link-pill" href="https://driver.heetch.com/fr" target="_blank">Heetch — Inscription</a>
+        <a class="link-pill" href="https://www.autoscout24.nl" target="_blank">AutoScout24 NL</a>
+        <a class="link-pill" href="https://www.marktplaats.nl" target="_blank">Marktplaats NL</a>
+        <a class="link-pill" href="https://www.mobile.de" target="_blank">Mobile.de (DE)</a>
+        <a class="link-pill" href="https://app.netlify.com/drop" target="_blank">Netlify Drop — Partager ce doc</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="share-box">
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--gold);margin-bottom:16px;">📤 Comment partager ce document ?</h3>
+    <div class="g3">
+      <div>
+        <p style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--violet-light);margin-bottom:8px;">Option 1 — Email</p>
+        <p style="color:#d1d5db;font-size:13px;line-height:1.65;">Télécharge le fichier HTML → joins-le à un email. La personne l'ouvre dans son navigateur et navigue comme sur un vrai site. Zéro compte requis.</p>
+      </div>
+      <div>
+        <p style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--violet-light);margin-bottom:8px;">Option 2 — Lien public (2 min)</p>
+        <p style="color:#d1d5db;font-size:13px;line-height:1.65;">Va sur <strong style="color:var(--gold);">netlify.com/drop</strong> → glisse-dépose le fichier HTML → tu reçois une URL publique → tu envoies le lien. Navigation complète.</p>
+      </div>
+      <div>
+        <p style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--violet-light);margin-bottom:8px;">Option 3 — Google Drive</p>
+        <p style="color:#d1d5db;font-size:13px;line-height:1.65;">Upload sur Drive → partage avec droits "lecteur" → la personne télécharge et ouvre dans son navigateur. Simple et sécurisé.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="card card-deep" style="border:1px solid rgba(124,58,237,.3);">
+    <h3>✦ Le résumé final — La vérité sans filtre</h3>
+    <div class="g2" style="margin-top:8px;">
+      <ul class="cl dark">
+        <li><strong>5 000 € net/mois est atteignable à Toulouse en 7 mois</strong> — mais pas en travaillant 35h. Plan sur 60–70h/sem. les 4–5 premiers mois.</li>
+        <li><strong>Le vrai levier = sortir des plateformes</strong> dès que possible. Chaque client direct économise 27% de commission.</li>
+        <li><strong>La SASU est non-négociable</strong> si tu veux l'optimisation fiscale. Le micro te fait perdre 3 000–5 000 €/an.</li>
+        <li><strong>Septembre est ton mois saint.</strong> Ne jamais être en vacances en septembre. Jamais.</li>
+      </ul>
+      <ul class="cl dark">
+        <li><strong>Zéro facture perdue</strong> — chaque dépense pro non justifiée est de la TVA envolée.</li>
+        <li><strong>3 000–4 000 € de réserve</strong> sur le compte SASU pour les imprévus.</li>
+        <li><strong>L'aéroport de Blagnac tôt le matin</strong> est ta mine d'or — une course à 55 € vaut 4 petites courses urbaines.</li>
+        <li><strong>Ce plan n'est pas une promesse.</strong> C'est une carte. Ta discipline et ton professionnalisme font la différence.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">VTC Mentor ✦ Toulouse</div>
+      <p class="footer-disc">Guide opérationnel 2025. Document à usage personnel et confidentiel. Les projections financières sont des estimations basées sur les conditions du marché toulousain. Elles ne constituent pas une garantie de revenus. Consultez un expert-comptable agréé avant toute décision fiscale ou juridique.</p>
+    </div>
+    <div style="font-size:48px;opacity:.3;">🚗</div>
+  </div>
+</footer>
+
+</body>
+</html>
